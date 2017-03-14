@@ -12,5 +12,14 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michielbrits/Devops-repo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michielbrits/Devops-repo/issues"
+  },
+  "homepage": "https://github.com/michielbrits/Devops-repo#readme",
+  "devDependencies": {}
 }
