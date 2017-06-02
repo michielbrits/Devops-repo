@@ -9,8 +9,8 @@
 
   <!-- Angular -->
   <script src="http://connect.facebook.net/en_US/all.js"></script>
-  <script src="angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"> </script>
+  <script src="angular.js"></script>
+<!--  <script src="angular-route.js"></script> -->
   <script src="http://maps.google.com/maps/api/js"></script>
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
   <!-- App specific -->
@@ -30,10 +30,10 @@
         <a class="navbar-brand" href="#">WebSiteName</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Logout</a></li>
-        <!--<li><a ng-click="getproducts()">getproducts</a></li> -->
-        <li><a href="#producten">Products</a></li>
+       <li class="active"><a href="#">Home</a></li>
+        <li><a href="/">Logout</a></li>
+        <li><a href="/producten.html">Products</a></li>
+        <li><a href="#" ng-click="getproducts()">getproducts</a></li>
 
         <li><a ng-click="login()">FB login</a></li>
         <li><a href="#">Logged in as: {{ name }}</a></li>
@@ -55,7 +55,7 @@
   </ul>
 
   <h3>My Google Maps Demo</h3>
-</div>
+
 <!-- <div ng-controller="MapController"> -->
   <!--  <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
   <div id="map"></div>
@@ -63,6 +63,16 @@
     <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
       <label id="names" >{{marker.title}}</label></a>
   </div>
+<div ng-repeat="productnr in productamount">
+  <img ng-src="{{ images[productnr] }}">
+  <button ng-click="addproduct()" class="btn btn-success">Add to cart</button>
+  <br>
+  <h3>fabricants:</h3>
+  <span ng-repeat="brandname in brand[productnr]">{{ brandname }}, </span>
+  <br>
+  <span> <h3>Ingredients:</h3> {{ ingredients[productnr] }} </span>
+</div>
 <!-- </div> -->
+</div>
 </body>
 </html>
